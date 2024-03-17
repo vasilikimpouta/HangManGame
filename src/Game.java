@@ -42,7 +42,10 @@ public class Game {
             System.out.println(foo() + "   wrong letters: " + wrongLetters);
         }
         System.out.println(word);
-        System.out.println(DefinitionApiClient.getDefinition(word));
+        List<Meaning> meanings = DefinitionApiClient.getDefinition(word);
+        for(Meaning meaning: meanings){
+            System.out.println(meaning);
+        }
     }
     private String foo() {
         StringBuilder stringBuilder = new StringBuilder();
